@@ -16,3 +16,4 @@ templates/*
 !templates/.gitkeep
 
 static/css/tailwind.output.css
+
