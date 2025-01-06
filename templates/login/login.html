@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block script %}
+<script src="/static/js/login.js"></script>
+{% endblock %}
+
+{% set x_data = 'x-data="login()"' %}
+
+{% block header %}
+{% include 'login/header.html' %}
+{% endblock %}
+
+{% block content %}
+{% include 'login/content.html' %}
+{% endblock %}

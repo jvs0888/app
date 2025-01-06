@@ -12,8 +12,18 @@ logs/*
 static/img/*
 !static/img/.gitkeep
 
-templates/*
+templates/*.html
+!templates/base.html
 !templates/.gitkeep
+
+templates/dashboard/*.html
+!templates/dashboard/dashboard.html
+
+templates/index/*.html
+!templates/index/index.html
+
+templates/login/*.html
+!templates/login/login.html
 
 static/css/tailwind.output.css
 
