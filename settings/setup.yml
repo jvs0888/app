@@ -1,0 +1,27 @@
+db_connect:
+  postgres: postgresql+asyncpg://{user}:{password}@localhost:5432/postgres
+  redis: redis://localhost:6379
+
+cors:
+  allow_origins:
+    - http://localhost
+    - http://127.0.0.1
+  allow_credentials: true
+  allow_methods:
+    - "*"
+  allow_headers:
+    - "*"
+
+cookie:
+  key: access_token
+  httponly: true
+  expires: 3600
+  samesite: none
+  secure: true
+
+oauth:
+  google:
+    name: google
+    server_metadata_url: https://accounts.google.com/.well-known/openid-configuration
+    client_kwargs:
+      scope: openid email profile

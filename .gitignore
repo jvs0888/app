@@ -1,0 +1,16 @@
+.idea/
+.venv/
+*__pycache__/
+node_modules
+
+*/.env
+
+#logs/*.log
+logs/*
+!logs/.gitkeep
+
+static/img/*
+!static/img/.gitkeep
+
+templates/*
+!templates/.gitkeep
