@@ -6,20 +6,6 @@ authors = ["Yevhen Syzintsev <yevhen_s@dataforest.ai>"]
 readme = "README.md"
 packages = [{ include = "app" }]
 
-[tool.poe.tasks]
-dev.sequence = [
-    { cmd = "npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/tailwind.output.css" },
-    { cmd = "uvicorn --host localhost --port 8000 --reload --factory app.main:init_app" }
-]
-dev.ignore_fail = false
-
-prod.sequence = [
-    { cmd = "npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/tailwind.output.css" },
-    { cmd = "gunicorn 'app.main:init_app()' --config settings/gunicorn_conf.py" }
-]
-prod.ignore_fail = false
-
-
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.115.6"
@@ -29,7 +15,6 @@ pyyaml = "^6.0.2"
 python-dotenv = "^1.0.1"
 jinja2 = "^3.1.4"
 gunicorn = "^23.0.0"
-poethepoet = "^0.31.1"
 pyjwt = "^2.10.1"
 fastapi-limiter = "^0.1.6"
 sqlalchemy = "^2.0.36"

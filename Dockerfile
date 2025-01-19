@@ -19,8 +19,6 @@ COPY . .
 
 RUN npm install tailwindcss
 
-#RUN npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/tailwind.output.css
+RUN npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/tailwind.output.css
 
-ENTRYPOINT ["poetry", "run", "poe"]
-
-CMD ["prod"]
+CMD ["sh", "-c", "gunicorn 'app.main:init_app()' --config settings/gunicorn_conf.py -b ${HOST}:${PORT}"]
