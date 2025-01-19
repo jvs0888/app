@@ -1,5 +1,15 @@
 include settings/.env
 
+install:
+	apt-get update && apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g npm@latest
+	npm install tailwindcss
+
+	pip install poetry
+	poetry install
+
 tailwind-build:
 	npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/tailwind.output.css
 
